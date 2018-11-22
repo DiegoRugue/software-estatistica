@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+  <html lang="pt-br">
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	  	<link rel="stylesheet" type="text/css" href="estilo.css">
+	  	<script src="js/estatistica.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta charset="utf-8">
+      <title>Estatistica</title>
+      <link rel="shortcut icon" href="imagens/favicon.png">
+    </head>
+
+    <body>
+
+		<!--CABEÇALHO-->
+        <header>
+    		<div class="navbar-fixed">
+				<nav class="blue">
+					<div class="container">
+						<div class="nav-wrapper">
+							<a href="index.html" class="brand-logo img-logo"></a>
+							<a href="#" data-target="mobile-demo" class="sidenav-trigger">
+								<i class="material-icons">menu</i>
+							</a>
+							<ul class="right hide-on-med-and-down">
+								<li>
+									<a href="#secaoHome" id="btn" class="waves-effect waves-light">Home</a>
+								</li>
+								<li><a href="#secaoLogin" id="btn1" class="waves-effect waves-light">Login</a></li>
+								<li><a href="#secaoCadastra" id="btn2" class="waves-effect waves-light">Cadastre-se</a></li>
+							</ul>
+						</div>
+					</div>
+		  		</nav>
+		  	</div>
+
+			<ul class="sidenav" id="mobile-demo">
+				<li><a class="subheader">Menu</a></li>
+				<li><a href="#secaoHome" id="btnm" class="waves-effect waves-light">Home</a></li>
+				<li><a href="#secaoLogin" id="btn1m" class="waves-effect">Login</a></li>
+				<li><a href="#secaoCadastra" id="btn2m" class="waves-effect">Cadastre-se</a></li>
+			</ul>
+			
+        </header>
+        
+        <main>
+			<!--IMG PARALAX-->
+        	<div class="parallax-container">
+				<div class="parallax"><img src="imagens/back.jpg"></div>
+		
+      			<div id="secaoHome" style="margin-top: 100px;" class="section white section scrollspy">
+      				<div class="row container">
+        				<h2 class="header">Soluções Estatísticas</h2>
+        				<p>Cálculos estatísticos são problemáticos e trabalhosos, visando esse problema desenvolvemos um software capaz de poupar seus usuários do trabalho de lembrar de formula, realizar cálculos a mão ou mesmo numa calculadora de ambas as formas se arriscando a errar e ter que fazer tudo novamente.</p>
+      				</div>
+    			</div>
+    		</div>
+
+    		<div class="section white section scrollspy" id="secaoLogin">
+      			<div class="row container">
+      				<form class="col s12">
+	        			<h2 class="header">Login</h2>
+	        			<div class="input-field col s12 m6">
+	          				<input id="email" type="email" class="validate">
+	          				<label for="email">Email</label>
+	        			</div>
+	        			<div class="input-field col s12 m6">
+	          				<input id="password" type="password" class="validate">
+	          				<label for="password">Senha</label>
+	        			</div>
+	        			<a href="principal.html" class="waves-effect waves-light btn blue">Login</a>
+	        			<a href="#modal1" class="white right btn modal-trigger btn-flat" style="color: blue;">Esqueceu sua senha?</a>
+	        		</form>
+      			</div>
+			</div>
+				
+			<div class="section white section scrollspy" id="secaoCadastra">
+				<div class="row container">
+					<form class="col s12">
+						<h2 class="header">Cadastre-se</h2>
+						<div class="input-field col s12">
+							<input id="nome" type="text" class="validate">
+							<label for="nome">Nome</label>
+						</div>
+						<div class="input-field col s12 m6">
+							<input id="email2" type="email" class="validate">
+							<label for="email2">Email</label>
+						</div>
+						<div class="input-field col s12 m6">
+							<input id="confirmemail" type="email" class="validate">
+							<label for="confirmemail">Confirme seu email</label>
+						</div>
+						<div class="input-field col s12 m6">
+							<input id="senha" type="password" class="validate">
+							<label for="senha">Senha</label>
+						</div>
+						<div class="input-field col s12 m6">
+							<input id="confsenha" type="password" class="validate">
+							<label for="confsenha">Confirme sua senha</label>
+						</div>
+						<button class="waves-effect waves-light btn blue">Cadastrar</button>
+					</form>
+				</div>
+			</div>
+
+			<div id="secondparalax" class="parallax-container">
+				<div class="parallax"><img src="imagens/back.jpg"></div>
+			</div>
+
+			<!-- Modal Structure -->
+  			<div id="modal1" class="modal">
+    			<div class="modal-content">
+      				<h4>Envie-nos uma mensagem</h4>
+    				<form class="col s12">
+      					<div class="row">
+        					<div class="input-field col s12 m6">
+          						<input id="first_name" type="text" class="validate">
+          						<label for="first_name">Nome</label>
+        					</div>
+        					<div class="input-field col s12 m6">
+          						<input id="email3" type="email" class="validate">
+          						<label for="email3">Email</label>
+        					</div>
+        					<div class="input-field col s12">
+          						<i class="material-icons prefix">mode_edit</i>
+          						<textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+          						<label for="icon_prefix2">Mensagem</label>
+        					</div>
+        				</div>
+        			</form>
+    			</div>
+    			<div class="modal-footer">
+      				<a href="#!" class="modal-close waves-effect waves-green btn-flat">
+      					<i class="material-icons left">send</i>
+      					Enviar
+      				</a>
+    			</div>
+  			</div>
+        </main>
+
+
+
+		<!--RODAPE-->
+        <footer class="page-footer blue">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Projeto Estatística</h5>
+                <p class="grey-text text-lighten-4">O projeto une quatro disciplinas para criar um sistema MVP (Minimum Viable Product) o mais próximo possível de um produto real.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Contato</h5>
+                <button data-target="modal1" class="blue btn modal-trigger btn-flat" style="color:white;">
+                	<i class="material-icons left">send</i>
+                	Envie-nos uma mensagem
+            	</button>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container center">
+            	<span>© 2018 Copyright Todos os direitos reservados</span>
+            </div>
+          </div>
+        </footer>
+
+
+        <!--JQuery at end of body for optimized loading-->
+  	  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <!--JavaScript at end of body for optimized loading-->
+			<script type="text/javascript" src="js/materialize.min.js"></script>
+			
+      <script>
+      	$(document).ready(function(){
+
+			$('.sidenav').sidenav();
+			$('.parallax').parallax();
+			$('.modal').modal();
+
+			//INICIA ELEMENTO INVISIVEL
+			$('#secaoCadastra').hide();
+			$('#secaoLogin').hide();
+			$('#secondparalax').hide();
+
+			//BOTÃO HOME
+			$('#btn').click( function(){
+				$('.scrollspy').scrollSpy({
+    		 		scrollOffset:200
+    			});
+				$('#secaoHome').fadeIn();
+				$('#secaoLogin').hide();
+				$('#secaoCadastra').hide();
+				$('#secondparalax').hide();
+			})
+
+			//CLONE DO BOTÃO
+			$('#btnm').click( function(){
+				$('.scrollspy').scrollSpy({
+    		 		scrollOffset:200
+    			});
+				$('#secaoHome').fadeIn();
+				$('#secaoLogin').hide();
+				$('#secaoCadastra').hide();
+				$('#secondparalax').hide();
+			})
+
+			//BOTÃO LOGIN
+			$('#btn1').click( function(){
+				$('.scrollspy').scrollSpy({
+    		 		scrollOffset:200
+    			});
+				$('#secaoLogin').fadeIn();
+				$('#secaoCadastra').hide();
+				$('#secondparalax').show();
+				$('#secaoHome').hide();
+			})
+			//CLONE BOTÃO MENU
+			$('#btn1m').click( function(){
+				$('.scrollspy').scrollSpy({
+    		 		scrollOffset:200
+    			});
+				$('#secaoLogin').fadeIn();
+				$('#secaoCadastra').hide();
+				$('#secondparalax').show();
+				$('#secaoHome').hide();
+			})
+			//BOTÃO CADASTRA
+			$('#btn2').click( function(){
+				$('.scrollspy').scrollSpy({
+    		 		scrollOffset:100
+    			});
+				$('#secaoLogin').hide();
+				$('#secaoCadastra').fadeIn();
+				$('#secondparalax').show();
+				$('#secaoHome').hide();
+			})
+			//CLONE BOTÃO MENU
+			$('#btn2m').click( function(){
+				$('#secaoLogin').hide();
+				$('#secaoCadastra').fadeIn();
+				$('#secondparalax').show();
+				$('#secaoHome').hide();
+			})
+  		});
+  	</script>
+
+    </body>
+</html>

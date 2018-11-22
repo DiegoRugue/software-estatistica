@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+  <html lang="pt-br">
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	  <link rel="stylesheet" type="text/css" href="estilo.css">
+	  <script src="js/estatistica.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta charset="utf-8">
+      <title>Estatistica</title>
+      <link rel="shortcut icon" href="imagens/favicon.png">
+    </head>
+
+    <body>
+
+    	<!---- CABEÇALHO ---->
+
+    	<header>
+    		<div class="navbar-fixed">
+				<nav class="blue">
+					<div class="container">
+						<div class="nav-wrapper">
+							<a href="principal.html" class="brand-logo img-logo"></a>
+							<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+							<ul class="right hide-on-med-and-down">
+								<li><a href="index.html" class="waves-effect waves-light">Home</a></li>
+								<li><a id="btn1" class="waves-effect waves-light">Estatística Descritiva</a></li>
+								<li><a id="btn2" class="waves-effect waves-light">Calculadora Estatística</a></li>
+								<li><a id="btn3" class="waves-effect waves-light">Correlação e Regressão</a></li>
+							</ul>
+						</div>
+					</div>
+		  		</nav>
+		  	</div>
+
+			<ul class="sidenav" id="mobile-demo">
+				<li><a class="subheader">Menu</a></li>
+				<li><a href="index.html" class="waves-effect waves-light">Home</a></li>
+				<li><a id="btn1m" class="waves-effect">Estatística Descritiva</a></li>
+				<li><a id="btn2m" class="waves-effect">Calculadora Estatística</a></li>
+				<li><a id="btn3m" class="waves-effect">Correlação e Regressão</a></li>
+				<div id="menucalc">
+					<li><div class="divider"></div></li>
+					<li><a class="subheader">Calculadora Estatística</a></li>
+					<li><a id="btn4m" class="waves-effect">Distribuição Normal</a></li>
+					<li><a id="btn5m" class="waves-effect">Distribuição Binomial</a></li>
+					<li><a id="btn6m" class="waves-effect">Distribuição Uniforme</a></li>
+				</div>
+			</ul>
+			
+  		</header>
+
+  		<!---- FIM CABEÇALHO ---->
+		<main>
+			<!---- ESTATISTICA DESCRITIVA ---->
+
+			<div class="container" id="ed">
+				<h3 class="light">Estatistica Descritiva</h3>
+				<form class="col s12">
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="nomevar" type="text" class="validate">
+							<label for="nomevar">Nome da Variavel</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="coleta" type="text" class="validate">
+							<label for="coleta">Digite os elementos separados por ; Ex: 1;2;3;4;5</label>
+						</div>
+						<div>
+							Tipo de Pesquisa:
+							<p>
+								<label>
+									<input type="radio" name="op" id="proces1" value="1" checked />
+									<span>Amostra</span>
+								</label>
+							</p>
+							<p>
+								<label>
+									<input type="radio" name="op" id="proces2" value="2"/>
+									<span>População</span>
+								</label>	
+							</p>
+						</div>
+
+						<div>
+							<div class="input-field col s6" id="divQ">
+								Medidas Separatrizes:
+								<select id="selectQ">
+									<option value="" disabled selected>Quartil</option>
+									<option value="25">Q1</option>
+									<option value="50">Q2</option>
+									<option value="75">Q3</option>
+									<option value="100">Q4</option>
+								</select>
+							</div>
+
+							<div class="input-field col s6" id="divK">
+								<br>
+								<select id="selectK">
+									<option value="" disabled selected>Kintil</option>
+									<option value="20">K1</option>
+									<option value="40">K2</option>
+									<option value="60">K3</option>
+									<option value="80">K4</option>
+									<option value="100">K5</option>
+								</select>
+							</div>
+
+							<div class="input-field col s6" id="divD">
+								<br>
+								<select id="selectD">
+									<option value="" disabled selected>Decil</option>
+									<option value="10">D1</option>
+									<option value="20">D2</option>
+									<option value="30">D3</option>
+									<option value="40">D4</option>
+									<option value="50">D5</option>
+									<option value="60">D6</option>
+									<option value="70">D7</option>
+									<option value="80">D8</option>
+									<option value="90">D9</option>
+									<option value="100">D10</option>
+								</select>
+							</div>
+
+							<div class="input-field col s6" id="divP">
+								<br>
+								<select id="selectP">
+									<option value="" disabled selected>Porcentil</option>
+									<option value="1">P1</option>
+									<option value="2">P2</option>
+									<option value="3">P3</option>
+									<option value="4">P4</option>
+									<option value="5">P5</option>
+									<option value="6">P6</option>
+									<option value="7">P7</option>
+									<option value="8">P8</option>
+									<option value="9">P9</option>
+									<option value="10">P10</option>
+									<option value="11">P11</option>
+									<option value="12">P12</option>
+									<option value="13">P13</option>
+									<option value="14">P14</option>
+									<option value="15">P15</option>
+									<option value="16">P16</option>
+									<option value="17">P17</option>
+									<option value="18">P18</option>
+									<option value="19">P19</option>
+									<option value="20">P20</option>
+									<option value="21">P21</option>
+									<option value="22">P22</option>
+									<option value="23">P23</option>
+									<option value="24">P24</option>
+									<option value="25">P25</option>
+									<option value="26">P26</option>
+									<option value="27">P27</option>
+									<option value="28">P28</option>
+									<option value="29">P29</option>
+									<option value="30">P30</option>
+									<option value="31">P31</option>
+									<option value="32">P32</option>
+									<option value="33">P33</option>
+									<option value="34">P34</option>
+									<option value="35">P35</option>
+									<option value="36">P36</option>
+									<option value="37">P37</option>
+									<option value="38">P38</option>
+									<option value="39">P39</option>
+									<option value="40">P40</option>
+									<option value="41">P41</option>
+									<option value="42">P42</option>
+									<option value="43">P43</option>
+									<option value="44">P44</option>
+									<option value="45">P45</option>
+									<option value="46">P46</option>
+									<option value="47">P47</option>
+									<option value="48">P48</option>
+									<option value="49">P49</option>
+									<option value="50">P50</option>
+									<option value="51">P51</option>
+									<option value="52">P52</option>
+									<option value="53">P53</option>
+									<option value="54">P54</option>
+									<option value="55">P55</option>
+									<option value="56">P56</option>
+									<option value="57">P57</option>
+									<option value="58">P58</option>
+									<option value="59">P59</option>
+									<option value="60">P60</option>
+									<option value="61">P61</option>
+									<option value="62">P62</option>
+									<option value="63">P63</option>
+									<option value="64">P64</option>
+									<option value="65">P65</option>
+									<option value="66">P66</option>
+									<option value="67">P67</option>
+									<option value="68">P68</option>
+									<option value="69">P69</option>
+									<option value="70">P70</option>
+									<option value="71">P71</option>
+									<option value="72">P72</option>
+									<option value="73">P73</option>
+									<option value="74">P74</option>
+									<option value="75">P75</option>
+									<option value="76">P76</option>
+									<option value="77">P77</option>
+									<option value="78">P78</option>
+									<option value="79">P79</option>
+									<option value="80">P80</option>
+									<option value="81">P81</option>
+									<option value="82">P82</option>
+									<option value="83">P83</option>
+									<option value="84">P84</option>
+									<option value="85">P85</option>
+									<option value="86">P86</option>
+									<option value="87">P87</option>
+									<option value="88">P88</option>
+									<option value="89">P89</option>
+									<option value="90">P90</option>
+									<option value="91">P91</option>
+									<option value="92">P92</option>
+									<option value="93">P93</option>
+									<option value="94">P94</option>
+									<option value="95">P95</option>
+									<option value="96">P96</option>
+									<option value="97">P97</option>
+									<option value="98">P98</option>
+									<option value="99">P99</option>
+									<option value="100">P100</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div style="padding-bottom: 10px;">
+						<a id="startgg" href="#saidagg" onclick="entrada()" class="waves-effect waves-light btn blue">Calcular</a>
+					</div>
+				</form>
+
+				<div class="container section scrollspy" id="saidagg">
+					<table class="striped highlight centered responsive-table" id="exibe"></table>
+					<p class="center" id="resultado"></p>
+					<p class="center" id="mmm"></p>
+					<p class="center" id="saidaseparatriz"></p>
+					<div style="width: 900px; height: 500px">
+                    	<canvas id="myChart"></canvas>
+                    </div>
+				</div>
+
+			</div>
+
+			<!---- FIM ESTATISTICA DESCRITIVA ---->
+
+			<!----- CALCULADORA ESTATISTICA ---->
+
+			<div class="container" id="calc">
+				<div class="row">
+					<div class="col s12">
+						<ul class="tabs hide-on-med-and-down">
+							<li class="tab col l4"><a class="active" href="#dn">Distribuição Normal</a></li>
+							<li class="tab col l4"><a href="#db">Distribuição Binomial</a></li>
+							<li class="tab col l4"><a href="#du">Distribuição Uniforme</a></li>
+						</ul>
+					</div>
+					<!--------- DISTRIBUIÇÃO NORMAL ------>
+					<div id="dn" class="col s12">
+						<h3 class="light">Distribuição Normal</h3>
+						<div class="input-field col s6">
+							<input id="media" type="text" class="validate">
+							<label for="media">Digite a média</label>
+						</div>
+						<div class="input-field col s6">
+							<input id="dp" type="text" class="validate">
+							<label for="dp">Digite o desvio padrão</label>
+						</div>
+						<div class="input-field col s12">
+							<select class="selectentre" id="disnselect">
+								<option value="" disabled selected>Escolha uma das situações</option>
+								<option value="1">Entre dois valores</option>
+								<option value="2">Maior que um valor</option>
+								<option value="3">Menor que um valor</option>
+							</select>
+						</div>
+
+						<div class="input-field col s6" id="entredn">
+							<input id="entre1" type="text" class="validate">
+							<label for="entre1">Digite o valor</label>
+						</div>
+						<div class="input-field col s6" id="entre2dn">
+							<input id="entre2" type="text" class="validate">
+							<label for="entre2">Digite o valor</label>
+						</div>
+						<div class="input-field col s12">
+							<a onclick="tabelaDN()" href="#saidadn" class="waves-effect waves-light btn blue">Calcular</a>
+						</div>
+
+						<div class="container section scrollspy col s12" id="saidadn">
+							<p class="center" id="probabil"></p>
+						</div>
+					</div>
+
+					<!---DISTRIBUIÇÃO BINOMINAL ---->
+					<div id="db" class="col s12">
+						<h3 class="light">Distribuição Binominal</h3>
+						<div class="input-field col s6" id="NDB">
+							<input placeholder="N" id="NBinomi" type="text" class="validate">
+							<label for="NBinomi">Tamanho da amostra</label>
+						</div>
+						<div class="input-field col s6" id="KDB">
+							<input placeholder="Digite os valores de K separados por ;" id="KBinomi" type="text" class="validate">
+							<label for="KBinomi">Elementos</label>
+						</div>
+						<div class="input-field col s6" id="PDB">
+							<input placeholder="P" id="PBinomi" type="text" class="validate">
+							<label for="PBinomi">Sucesso</label>
+						</div>
+						<div class="input-field col s6" id="QDB">
+							<input placeholder="Q" id="QBinomi" type="text" class="validate">
+							<label for="QBinomi">Fracasso</label>
+						</div>
+						<div class="input-field col s12">
+							<a onclick="DistBinomi()" href="#saidadb" class="waves-effect waves-light btn blue">Calcular</a>
+						</div>
+						<div class="container section scrollspy col s12" id="saidadb">
+							<p class="center" id="saidadbgg"></p>
+						</div>
+					</div>
+					<!---DISTRIBUIÇÃO UNIFORME ---->
+					<div id="du" class="col s12">
+						<h3 class="light">Distribuição Uniforme</h3>
+						<div class="input-field col s6">
+							<input id="vmin" type="text" class="validate">
+							<label for="vmin">Digite o limite inferior</label>
+						</div>
+						<div class="input-field col s6">
+							<input id="vmax" type="text" class="validate">
+							<label for="vmax">Digite o limite superior</label>
+						</div>
+						<div class="input-field col s12">
+							<select class="selectUni" id="disUniSelect">
+								<option value="" disabled selected>Escolha uma das situações</option>
+								<option value="1">Entre dois valores</option>
+								<option value="2">Maior que um valor</option>
+								<option value="3">Menor que um valor</option>
+							</select>
+						</div>
+
+						<div class="input-field col s6" id="entredu">
+							<input id="nume1" type="text" class="validate">
+							<label for="nume1">Digite o valor</label>
+						</div>
+						<div class="input-field col s6" id="entre2du">
+							<input id="nume2" type="text" class="validate">
+							<label for="nume2">Digite o valor</label>
+						</div>
+						<div class="input-field col s12 ">
+							<a onclick="distUni()" href="#saidadu" class="waves-effect waves-light btn blue">Calcular</a>
+						</div>
+
+						<div class="container section scrollspy col s12" id="saidadu">
+							<p class="center" id="probdu"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!---- FIM CALCULADORA ESTATISTICA ---->
+
+			<!--- CORRELAÇÃO E REGRESSÃO --->
+			<div class="container" id="correla">
+				<div class="row">
+					<h3 class="light">Correlação e Regressão</h3>
+					<div class="input-field col s12">
+          				<input id="independente" placeholder="Valores de X separados por ;" type="text" class="validate">
+          				<label for="independente">Variavel idependente</label>
+					</div>
+					<div class="input-field col s12">
+          				<input id="dependente" placeholder="Valores de Y separados por ;" type="text" class="validate">
+          				<label for="dependente">Variavel dependente</label>
+        			</div>
+        			<div class="input-field col s12">
+							<a onclick="correlacao()" href="#saidacorrela" class="waves-effect waves-light btn blue">Calcular</a>
+						</div>
+
+						<div class="container section scrollspy" id="saidacorrela">
+							<p class="center" id="corelasaida"></p>
+							<p class="center" id="equacaosaida"></p>
+						</div>
+						<div style="width: 900px; height: 500px">
+                    	<canvas id="myChart2"></canvas>
+                    </div>
+				</div>
+			</div>
+			<!---FIM CORELAÇÃO --->	
+
+			<!-- Modal Structure -->
+  			<div id="modal1" class="modal">
+    			<div class="modal-content">
+      				<h4>Envie-nos uma mensagem</h4>
+    				<form class="col s12">
+      					<div class="row">
+        					<div class="input-field col s12 m6">
+          						<input id="first_name" type="text" class="validate">
+          						<label for="first_name">Nome</label>
+        					</div>
+        					<div class="input-field col s12 m6">
+          						<input id="email3" type="email" class="validate">
+          						<label for="email3">Email</label>
+        					</div>
+        					<div class="input-field col s12">
+          						<i class="material-icons prefix">mode_edit</i>
+          						<textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+          						<label for="icon_prefix2">Mensagem</label>
+        					</div>
+        				</div>
+        			</form>
+    			</div>
+    			<div class="modal-footer">
+      				<a href="#!" class="modal-close waves-effect waves-green btn-flat">
+      					<i class="material-icons left">send</i>
+      					Enviar
+      				</a>
+    			</div>
+  			</div>
+		</main>
+
+
+
+
+
+
+
+
+ 
+          
+  		<!-- RODAPE -->
+  		<footer class="page-footer blue">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Projeto Estatística</h5>
+                <p class="grey-text text-lighten-4">O projeto une quatro disciplinas para criar um sistema MVP (Minimum Viable Product) o mais próximo possível de um produto real.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Contato</h5>
+                <button data-target="modal1" class="blue btn modal-trigger btn-flat" style="color:white;">
+                	<i class="material-icons left">send</i>
+                	Envie-nos uma mensagem
+            	</button>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container center">
+            	<span>© 2018 Copyright Todos os direitos reservados</span>
+            </div>
+          </div>
+        </footer>
+
+       	<!---- FIM RODAPE ----->
+
+
+
+
+  	  <!--JQuery at end of body for optimized loading-->
+  	  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+
+      <script>
+      	$(document).ready(function(){
+      		//ELEMENTOS QUE INICIAM OCULTOS
+      		$('#calc').hide();
+      		$('#menucalc').hide();
+      		$('#entredn').hide();
+    		$('#entre2dn').hide();
+    		$('#entredu').hide();
+    		$('#entre2du').hide();
+			$('#correla').hide();
+
+
+			$('.modal').modal();
+      		//BOTÃO MENU
+    		$('.sidenav').sidenav({
+    			//instance.close();
+    		});
+    		//Caixa de seleção
+    		$('select').formSelect();
+    		//rolagem
+    		 $('.scrollspy').scrollSpy({
+    		 	scrollOffset:40
+    		 });
+    		 //Inicializa as tabs
+    		 $('.tabs').tabs();
+
+    		//Função Mostrar Div estatistica descritiva
+    		$('#btn1').click( function(){
+    			$('#ed').fadeIn();
+    			$('#calc').hide();
+    			$('#menucalc').hide();
+				$('#correla').hide();
+    		})
+    		//clone botao menu estatistica descritiva
+    		$('#btn1m').click( function(){
+    			$('#ed').fadeIn();
+    			$('#calc').hide();
+    			$('#menucalc').hide();
+				$('#correla').hide();
+    		})
+    		//mostrar div calculadora estatistica
+    		$('#btn2').click( function(){
+    			$('#calc').fadeIn();
+    			$('#menucalc').show();
+    			$('#ed').hide();
+				$('#correla').hide();
+    		})
+    		//clone botao menu
+    		$('#btn2m').click( function(){
+    			$('#calc').fadeIn();
+    			$('#menucalc').show();
+    			$('#ed').hide();
+				$('#correla').hide();
+    		})
+    		//mostrar div correlação
+    		$('#btn3').click( function(){
+    			$('#ed').hide();
+    			$('#calc').hide();
+    			$('#menucalc').hide();
+				$('#correla').fadeIn();
+    		})
+    		//clone botao menu
+    		$('#btn3m').click( function(){
+    			$('#calc').hide();
+    			$('#menucalc').hide();
+    			$('#ed').hide();
+				$('#correla').fadeIn();
+			})
+    		//botão menu distribuição normal
+    		$('#btn4m').click( function(){
+    			$('#dn').fadeIn();
+    			$('#db').hide();
+    			$('#du').hide();
+    		})
+    		//botão menu distribuição binomial
+    		$('#btn5m').click( function(){
+    			$('#db').fadeIn();
+    			$('#dn').hide();
+    			$('#du').hide();
+    		})
+    		//botão menu distribuição uniforme
+    		$('#btn6m').click( function(){
+    			$('#du').fadeIn();
+    			$('#db').hide();
+    			$('#dn').hide();
+    		})
+    		//Select entre / maior que / menor que
+    		$('.selectentre').change(function(){
+    			var verificadeira = $(this).val();
+    			if (verificadeira == 1){
+    				$('#entredn').fadeIn();
+    				$('#entre2dn').fadeIn();
+    			}
+    			else if (verificadeira == 2){
+    				$('#entredn').fadeIn();
+    				$('#entre2dn').hide();
+    			}
+    			else{
+    				$('#entredn').fadeIn();
+    				$('#entre2dn').hide();
+    			}
+			})
+
+			$('.selectUni').change(function(){
+    			var verificadeira = $(this).val();
+    			if (verificadeira == 1){
+    				$('#entredu').fadeIn();
+    				$('#entre2du').fadeIn();
+    			}
+    			else if (verificadeira == 2){
+    				$('#entredu').fadeIn();
+    				$('#entre2du').hide();
+    			}
+    			else{
+    				$('#entredu').fadeIn();
+    				$('#entre2du').hide();
+    			}
+			})
+		});
+		  
+      </script>
+
+    </body>
+  </html>

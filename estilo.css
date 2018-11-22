@@ -1,0 +1,33 @@
+.img-logo{
+	height: 100px;
+	width: 132px;
+	display: block;
+	background: url('imagens/logo.png') no-repeat;
+	background-size: contain;
+	color: transparent;
+	float: left;
+	margin-right: 20px;
+}
+@media only screen and (min-width: 601px) {
+  nav.nav-extended .nav-wrapper {
+    min-height: 56px;
+  }
+  nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+    height: 56px;
+    line-height: 56px;
+  }
+  .navbar-fixed {
+    height: 56px;
+  }
+}
+
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
